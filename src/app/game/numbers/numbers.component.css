@@ -1,0 +1,20 @@
+.number{
+    background: #ccc;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+}
+
+.number--state-selected{
+    background: #008800;
+    color: #fff
+}
+
+.number--state-used{
+    background: #888;
+    color: #ccc;
+}

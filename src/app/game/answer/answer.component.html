@@ -1,0 +1,3 @@
+<div class="col-md-5">
+  <span class="number" *ngFor="let number of selectedNumbers" (click)="unselectNumber.emit({number: number})">{{ number }}</span>
+</div>

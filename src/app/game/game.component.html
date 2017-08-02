@@ -1,0 +1,23 @@
+<div class="container">
+  <h3>Play Nine!</h3>
+  <hr />
+  <div class="row" *ngIf="state.status == 'play'">
+    <app-stars [numberOfStars]="state.randomNumberOfStars"></app-stars>
+    <app-button
+    (checkAnswer)="checkAnswer()"
+    (acceptAnswer)="acceptAnswer()"
+    (redraw)="redraw()"
+    [answerIsCorrect]="state.answerIsCorrect"
+    [selectedNumbers]="state.selectedNumbers"
+    [redraws]="state.redraws"></app-button>
+    <app-answer
+    [selectedNumbers]="state.selectedNumbers"
+    (unselectNumber)="unselectNumber($event)">
+    </app-answer>
+  </div>
+  <br/>
+  <app-numbers *ngIf="state.status == 'play'" (selectNumber)="selectNumber($event)" [selectedNumbers]="state.selectedNumbers" [usedNumbers]="state.usedNumbers">
+  </app-numbers>
+  <app-message *ngIf="state.status != 'play'" [status]="state.status" (updateStatus)="updateStatus($event)">
+  </app-message>
+</div>

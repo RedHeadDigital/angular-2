@@ -1,0 +1,15 @@
+<div *ngIf="status == 'begin'" class="jumbotron text-center">
+  <h2>Press play to begin!</h2>
+  <p>Game info</p>
+  <button class="btn btn-lg btn-success" (click)="updateStatus.emit({status: 'play'})">Play</button>
+</div>
+<div *ngIf="status == 'end'" class="jumbotron text-center">
+  <h2>No more valid options</h2>
+  <p></p>
+  <button class="btn btn-lg btn-secondary" (click)="updateStatus.emit({status: 'reset'})">Reset</button>
+</div>
+<div *ngIf="status == 'win'" class="jumbotron text-center">
+  <h2>You win!</h2>
+  <p></p>
+  <button class="btn btn-lg btn-secondary" (click)="updateStatus.emit({status: 'reset'})">Replay</button>
+</div>

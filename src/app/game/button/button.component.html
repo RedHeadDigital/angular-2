@@ -1,0 +1,8 @@
+<div class="col-md-2 text-center">
+  <button (click)="acceptAnswer.emit({})" *ngIf="answerIsCorrect == true" class="btn btn-success"><i class="fa fa-check"></i></button>
+  <button *ngIf="answerIsCorrect == false" class="btn btn-danger"><i class="fa fa-times"></i></button>
+  <button (click)="checkAnswer.emit({})" [disabled]="selectedNumbers.length === 0" *ngIf="answerIsCorrect === null" class="btn">=</button>
+  <br />
+  <br />
+  <button class="btn btn-warning btn-sm" (click)="redraw.emit({})">{{ redraws }}</button>
+</div>

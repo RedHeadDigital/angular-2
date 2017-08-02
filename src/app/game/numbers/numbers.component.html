@@ -1,0 +1,5 @@
+<div class="text-center">
+  <div>
+    <span class="number" *ngFor="let number of arrayOfNumbers" (click)="selectNumber.emit({number: number})" [ngClass]="numberClassName(number)">{{ number }}</span>
+  </div>
+</div>
